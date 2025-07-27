@@ -3,7 +3,7 @@ package actions
 import (
 	"bufio"
 	"fmt"
-	"mango/internal/crypt"
+	"github.com/lexionq/mango/internal/crypt"
 	"os"
 	"strings"
 	"syscall"

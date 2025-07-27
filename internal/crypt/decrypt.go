@@ -4,7 +4,7 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 	"fmt"
-	"mango/internal/auth"
+	"github.com/lexionq/mango/internal/auth"
 )
 
 func Decrypt(data, key []byte) []byte {

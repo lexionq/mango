@@ -1,4 +1,4 @@
-module mango
+module github.com/lexionq/mango
 
 go 1.24.5
 

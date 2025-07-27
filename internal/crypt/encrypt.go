@@ -6,7 +6,7 @@ import (
 	"crypto/rand"
 	"fmt"
 	"io"
-	"mango/internal/auth"
+	"github.com/lexionq/mango/internal/auth"
 )
 
 func Encrypt(data, key []byte) []byte {

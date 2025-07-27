@@ -3,7 +3,7 @@ package actions
 import (
 	"fmt"
 	"os"
-	"mango/internal/crypt"
+	"github.com/lexionq/mango/internal/crypt"
 )
 
 func ListRegisters(path string, key []byte) string {

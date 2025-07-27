@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"mango/internal/actions"
-	"mango/internal/auth"
-	"mango/internal/pass"
-	"mango/internal/utils"
+	"github.com/lexionq/mango/internal/actions"
+	"github.com/lexionq/mango/internal/auth"
+	"github.com/lexionq/mango/internal/pass"
+	"github.com/lexionq/mango/internal/utils"
 	"os"
 	"path/filepath"
 )
