@@ -39,6 +39,15 @@ func main(){
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	var action string
+	if len(os.Args) > 1 {
+		action = os.Args[1]
+	} else {
+		utils.DisplayHelpMessage()
+		return
+	}
+
 	pass,err := auth.PromptPassword()
 
 	okay, err1 := auth.VerifyPassword(hash, pass)
@@ -54,7 +63,7 @@ func main(){
 		os.Exit(1)
 	}	
 
-	action := os.Args[1]
+	
 
 	switch action {
 	case "add":
@@ -66,6 +75,12 @@ func main(){
 		fmt.Println(actions.Search(passesPath,word,pass))
 	case "edit":
 		actions.Edit(passesPath,pass)
+	case "help","-h","--help":
+		utils.DisplayHelpMessage()
+	
+	default:
+		fmt.Println("[!] Error Unknown parameter!")
+		utils.DisplayHelpMessage()
 	}
 
 }

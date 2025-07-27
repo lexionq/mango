@@ -2,6 +2,7 @@ package utils
 
 import (
 	"os"
+	"fmt"
 )
 
 func PathExists(path string) bool {
@@ -15,3 +16,18 @@ func PassesFileControl(path string){
 	}
 }
 
+func DisplayHelpMessage(){
+	fmt.Println(`Usage:
+		mango [command]
+
+	Available Commands:
+		help        Show this help message
+		add         Add new register
+		list        List all of registers
+		search	    Searches for the specified word among the registers
+		edit        Edit registers(with nano)
+
+	Flags:
+		-h, --help  help for mango
+	`)
+}
