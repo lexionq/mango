@@ -1,9 +1,10 @@
 # mango 🥭
 🔐🔑 Password manager for CLI, written in Golang.  
-<p align="right"
-  <img width="90" height="90" alt="image" src="https://github.com/user-attachments/assets/5e5a2689-3f9f-4e80-a56c-f040f54e6073" />
-</p>
+
 <p align="center">
+  <img width="90" height="90" alt="image" src="https://github.com/user-attachments/assets/cc354bcc-0c60-49c6-b6ba-7837af62e9b8" />
+  <img width="90" height="90" alt="image" src="https://github.com/user-attachments/assets/5e5a2689-3f9f-4e80-a56c-f040f54e6073" />
+  <br>
   <img alt="GitHub License" src="https://img.shields.io/github/license/lexionq/mango?style=for-the-badge&logoColor=blue&color=blue">
   <img src="https://img.shields.io/github/languages/top/lexionq/mango?style=for-the-badge&color=cyan">
   <img src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple">  
