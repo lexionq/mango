@@ -23,27 +23,28 @@ This project works in Linux systems(if system have `nano`)
 
 ## Feautures 🌠
 When you use mango, you encrypt registers in the format `[name,website,username,password,note]` using a master password of your choice, and then use this password to access them.
-- Add registers
-- List registers
-- Edit registers
+- *Add registers*
+- *List registers*
+- *Edit registers*
+- *Search word among registers*
 
 ## How to use?
 
 ### Add Register
-`./mango add`
+`mango add`
 ### List Registers
-`./mango list`
+`mango list`
 ### Edit Registers
-`./mango edit`
-### Search a word in Registers
-`./mango search <word>`
+`mango edit`
+### Search a word among Registers
+`mango search <word>`
 
 ## How to install?
-
-#### For compiled version
-- Enter [mango GitHub Releases](https://github.com/mango/releases).
-- Download the latest version.
-- And run `mango` with use `./mango`.
+- Enter [mango GitHub repository](https://github.com/lexionq/mango)
+- Download the `setup.sh`
+- Run `chmod +x setup.sh`(if required)
+- And, `./setup.sh`
+- Finally, mango installed on your computer.
 
 #### Use on source code
 ```bash
