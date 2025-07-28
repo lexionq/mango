@@ -21,3 +21,4 @@ fmt:
 install: build
 	chmod +x $(BUILD_DIR)/$(BINARY_NAME)
 	sudo cp $(BUILD_DIR)/$(BINARY_NAME) $(INSTALL_DIR)/$(BINARY_NAME)
+
