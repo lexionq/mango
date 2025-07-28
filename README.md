@@ -18,9 +18,11 @@
 </p>
 <div align="center"
 
-[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install) • [🤝 Contributing](#-contributing)
+[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install) 
 
-• [🧠 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
+• [🤝 Contributing](#-contributing) • [🧠 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
+
+
 
 </div>
 
