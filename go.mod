@@ -3,12 +3,15 @@ module github.com/lexionq/mango
 go 1.24.5
 
 require (
+	github.com/spf13/cobra v1.9.1
 	golang.org/x/crypto v0.40.0
 	golang.org/x/term v0.33.0
 )
 
 require (
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/otiai10/mint v1.6.3 // indirect
+	github.com/spf13/pflag v1.0.6 // indirect
 	golang.org/x/sync v0.8.0 // indirect
 )
 
