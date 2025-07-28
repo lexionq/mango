@@ -35,9 +35,10 @@ Mango is a a lightweight and local password manager for the terminal. All your c
 
 ## ⚠️ Disclaimer
 
-> [!CAUTION] >**🚨 Beta Warning**
+> [!CAUTION]
+> **🚨 Warning**
 >
-> **_This project is still in beta. The program owner, lexionq, says they're not responsible if you lose or leak any passwords you've saved using the mango password manager._**
+> **_The program owner, lexionq, says they're not responsible if you lose or leak any passwords you've saved using the mango password manager._**
 >
 > **🧠 Don't Forget your Master Password**
 >
