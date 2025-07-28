@@ -59,18 +59,40 @@ With Mango, you can securely manage your credentials in the format:
 🔐 All data is AES encrypted using your master password.
 
 ## 🔧 Available Commands
+- ➕ **Add a Register**  
+  Use the command below to add a new register:  
+  ```bash
+  mango add
+  ```
+- 📎 **List All Registers**  
+  Display all saved registers:  
+  ```bash
+  mango list
+  ```
 
-- ➕ Add Register
-  `mango add`
-- 📎 List Registers
-  `mango list`
-- 📝 Edit Registers
-  `mango edit`
-- 🔍 Search among Registers
-  `mango search <word>`
-- 💱 Change your Master Password
-  `mango change`
+- 📝 **Edit a Register**  
+  Modify an existing register:  
+  ```bash
+  mango edit
+  ```
 
+- 🔍 **Search Registers**  
+  Search for specific registers using a keyword:  
+  ```bash
+  mango search <keyword>
+  ```
+
+- 📤 **Export Registers**  
+  Export all saved registers to a file:  
+  ```bash
+  mango export
+  ```
+
+- 📥 **Import Registers**  
+  Import registers from a previously exported file:  
+  ```bash
+  mango import
+  ```
 ## 📦 How to install?
 
 - 📥 Download the [`setup.sh`](https://github.com/lexionq/mango)
