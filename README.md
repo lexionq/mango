@@ -17,9 +17,9 @@
 </p>
 <div align="center"
 
-[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](-how-to-install) • [🤝 Contributing](#-contributing) 
+[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install) • [🤝 Contributing](#-contributing) 
 
-• [🧠 Future Plans](-future-plans)
+• [🧠 Future Plans](#-future-plans)
 
 </div>
 
@@ -91,4 +91,5 @@ Star ⭐ the repo if you like it — it motivates the developer 😄
 - [x] 🧂 Salting
 - [ ] 🪟 Windows & 🍏 macOS sypport
 - [ ] 🌐 GUI version (maybe?)
-- [ ] 🔁 Import/Export options
+- [x] 🔁 Import/Export options
+ 
