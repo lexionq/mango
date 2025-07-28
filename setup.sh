@@ -2,7 +2,7 @@
 
 #Settings
 PROGRAM_NAME="mango"
-VERSION="beta"
+VERSION="v0.2"
 INSTALL_DIR="/usr/bin"
 BINARY_URL="https://github.com/lexionq/mango/releases/download/$VERSION/$PROGRAM_NAME"
 

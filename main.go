@@ -75,9 +75,11 @@ func main(){
 		fmt.Println(actions.Search(passesPath,word,pass))
 	case "edit":
 		actions.Edit(passesPath,pass)
+	case "export":
+		actions.Export(passesPath)
 	case "help","-h","--help":
 		utils.DisplayHelpMessage()
-	
+
 	default:
 		fmt.Println("[!] Error Unknown parameter!")
 		utils.DisplayHelpMessage()
