@@ -91,4 +91,5 @@ Star ⭐ the repo if you like it — it motivates the developer 😄
 - [x] 🧂 Salting
 - [ ] 🪟 Windows & 🍏 macOS sypport
 - [ ] 🌐 GUI version (maybe?)
-- [ ] 🔁 Import/Export options
+- [x] 🔁 Import/Export options
+ 
