@@ -2,9 +2,19 @@
 
 #Settings
 PROGRAM_NAME="mango"
-VERSION="v0.2"
 INSTALL_DIR="/usr/bin"
-BINARY_URL="https://github.com/lexionq/mango/releases/download/$VERSION/$PROGRAM_NAME"
+
+echo "[*] Fetching latest version tag from GitHub..."
+
+LATEST_TAG=$(curl -s "https://api.github.com/repos/lexionq/mango/releases/latest" | grep '"tag_name":' | head -1 | sed -E 's/.*"([^"]+)".*/\1/')
+
+if [ -z "$LATEST_TAG" ]; then
+    echo "[!] Could not fetch latest version. Using default v0.2"
+    LATEST_TAG="v0.2"
+fi
+
+
+BINARY_URL="https://github.com/lexionq/mango/releases/download/$LATEST_TAG/$PROGRAM_NAME"
 
 echo "[*] Install starting..."
 
