@@ -9,8 +9,8 @@ echo "[*] Fetching latest version tag from GitHub..."
 LATEST_TAG=$(curl -s "https://api.github.com/repos/lexionq/mango/releases/latest" | grep '"tag_name":' | head -1 | sed -E 's/.*"([^"]+)".*/\1/')
 
 if [ -z "$LATEST_TAG" ]; then
-    echo "[!] Could not fetch latest version. Using default v0.2"
-    LATEST_TAG="v0.2"
+    echo "[!] Could not fetch latest version. Using default v0.3"
+    LATEST_TAG="v0.3"
 fi
 
 

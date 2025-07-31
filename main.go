@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/lexionq/mango/internal/actions"
-	"github.com/lexionq/mango/internal/auth"
-	"github.com/lexionq/mango/internal/pass"
-	"github.com/lexionq/mango/internal/utils"
 	"os"
 	"path/filepath"
+
+	"github.com/lexionq/mango/internal/actions"
+	"github.com/lexionq/mango/internal/auth"
+	"github.com/lexionq/mango/internal/password"
+	"github.com/lexionq/mango/internal/utils"
 )
 
 
@@ -29,7 +30,7 @@ func main(){
 	passesPath := filepath.Join(mangoDir,passesFile)
 
 	if !utils.PathExists(mPassPath){
-		pass.CreatePasswordandHashPassword(mPassPath)
+		password.CreatePasswordandHashPassword(mPassPath)
 	}
 
 	utils.PassesFileControl(passesPath)
@@ -52,7 +53,7 @@ func main(){
 
 	okay, err1 := auth.VerifyPassword(hash, pass)
 
-	if err != nil {
+	if err1 != nil {
 		fmt.Println(err)
 	}													
 
@@ -77,9 +78,10 @@ func main(){
 		actions.Edit(passesPath,pass)
 	case "export":
 		actions.Export(passesPath)
+	case "change":
+		password.ChangePassword()
 	case "help","-h","--help":
-		utils.DisplayHelpMessage()
-
+		utils.DisplayHelpMessage()	
 	default:
 		fmt.Println("[!] Error Unknown parameter!")
 		utils.DisplayHelpMessage()
