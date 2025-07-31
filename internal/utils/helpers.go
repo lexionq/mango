@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"os"
 	"fmt"
+	"os"
 )
 
 func PathExists(path string) bool {
@@ -26,6 +26,7 @@ func DisplayHelpMessage(){
 		list        List all of registers
 		search	    Searches for the specified word among the registers
 		edit        Edit registers(with nano)
+		change 		Change your master password
 
 	Flags:
 		-h, --help  help for mango
