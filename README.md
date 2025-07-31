@@ -93,6 +93,12 @@ With Mango, you can securely manage your credentials in the format:
   ```bash
   mango import
   ```
+- 💱 **Change Master Password**
+  Update your master password:
+  ```bash
+  mango change
+  ```
+  
 ## 📦 How to install?
 
 - 📥 Download the [`setup.sh`](https://github.com/lexionq/mango)
