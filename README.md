@@ -20,7 +20,7 @@
 
 [🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install) 
 
-• [🤝 Contributing](#-contributing) • [🧠 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
+• [🤝 Contributing](#-contributing-and-contributors) • [🧠 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
 
 
 
@@ -120,10 +120,12 @@ cd mango
 go run main.go
 ```
 
-## 🤝 Contributing
+## 🤝 Contributing and Contributors
 
 PRs, issues, and suggestions are welcome!
 Star ⭐ the repo if you like it — it motivates the developer 😄
+
+[![Contributors](https://contrib.rocks/image?repo=lexionq/mango)](https://github.com/lexionq/mango/graphs/contributors)
 
 ## 🧠 Future Plans
 
@@ -146,3 +148,6 @@ or
 ```bash
 bash setup.sh
 ```
+
+
+
