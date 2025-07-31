@@ -68,6 +68,8 @@ With Mango, you can securely manage your credentials in the format:
   `mango edit`
 - 🔍 Search among Registers
   `mango search <word>`
+- 💱 Change your Master Password
+  `mango change`
 
 ## 📦 How to install?
 
