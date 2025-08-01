@@ -5,6 +5,16 @@ import (
 	"os"
 )
 
+var mango = `
+🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭
+🥭 _ __ ___   __ _ _ __   __ _  ___   🥭
+🥭| '_ ` + "`" + ` _ \ / _` + "`" + ` | '_ \ / _` + "`" + ` |/ _ \  🥭
+🥭| | | | | | (_| | | | | (_| | (_) | 🥭
+🥭|_| |_| |_|\__,_|_| |_|\__, |\___/  🥭
+🥭                       |___/        🥭
+🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭🥭
+`
+
 func PathExists(path string) bool {
 	_, err := os.Stat(path)
 	return !os.IsNotExist(err)
@@ -17,6 +27,7 @@ func PassesFileControl(path string){
 }
 
 func DisplayHelpMessage(){
+	fmt.Println(mango)
 	fmt.Println(`Usage:
 		mango [command]
 
@@ -26,7 +37,8 @@ func DisplayHelpMessage(){
 		list        List all of registers
 		search	    Searches for the specified word among the registers
 		edit        Edit registers(with nano)
-		change 		Change your master password
+		change 	    Change your master password
+		generate    Password generator for you
 
 	Flags:
 		-h, --help  help for mango
