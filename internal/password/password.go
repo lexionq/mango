@@ -1,7 +1,9 @@
 package password
 
 import (
+	"crypto/rand"
 	"fmt"
+	"math/big"
 	"os"
 	"path/filepath"
 
@@ -151,4 +153,29 @@ func ChangePassword() {
 	fmt.Println("[✔] Your password updated successfully!")
 	
 
+}
+
+func GeneratePassword(length int) {
+	if length <= 5 {
+		fmt.Println("[!] Password length should be greater than 5.")
+		return
+	}
+
+	const charset = "abcdefghijklmnopqrstuvwxyz" +
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+		"0123456789" +
+		"!@#$%^&*()-_=+[]{}<>?"
+
+	password := make([]byte, length)
+	for i := range password {
+		num, err := rand.Int(rand.Reader, big.NewInt(int64(len(charset))))
+		if err != nil {
+			fmt.Println("[!] Error during generate password: ", err)
+			return 
+		}
+		password[i] = charset[num.Int64()]
+	}
+
+	fmt.Println("[✔] Your password generated succesfully:")
+	fmt.Println(string(password))
 }
