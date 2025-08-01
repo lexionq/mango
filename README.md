@@ -18,11 +18,9 @@
 </p>
 <div align="center"
 
-[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install) 
+[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install)
 
-• [🤝 Contributing](#-contributing-and-contributors) • [🧠 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
-
-
+• [🤝 Contributing](#-contributing-and-contributors) • [🎯 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
 
 </div>
 
@@ -35,8 +33,7 @@ Mango is a a lightweight and local password manager for the terminal. All your c
 
 ## ⚠️ Disclaimer
 
-> [!CAUTION]
-> **🚨 Warning**
+> [!CAUTION] > **🚨 Warning**
 >
 > **_The program owner, lexionq, says they're not responsible if you lose or leak any passwords you've saved using the mango password manager._**
 >
@@ -59,46 +56,63 @@ With Mango, you can securely manage your credentials in the format:
 🔐 All data is AES encrypted using your master password.
 
 ## 🔧 Available Commands
+
 - ➕ **Add a Register**  
-  Use the command below to add a new register:  
+  Use the command below to add a new register:
   ```bash
   mango add
   ```
 - 📎 **List All Registers**  
-  Display all saved registers:  
+  Display all saved registers:
+
   ```bash
   mango list
   ```
 
 - 📝 **Edit a Register**  
-  Modify an existing register:  
+  Modify an existing register:
+
   ```bash
   mango edit
   ```
 
 - 🔍 **Search Registers**  
-  Search for specific registers using a keyword:  
+  Search for specific registers using a keyword:
+
   ```bash
   mango search <keyword>
   ```
 
 - 📤 **Export Registers**  
-  Export all saved registers to a file:  
+  Export all saved registers to a file:
+
   ```bash
   mango export
   ```
 
 - 📥 **Import Registers**  
-  Import registers from a previously exported file:  
+  Import registers from a previously exported file:
+
   ```bash
   mango import
   ```
+
+- 🪄 **Generate Password**
+
+  Generate a password of the desired length (minimum 6 characters):
+
+  ```bash
+  mango generate <password_length>
+  ```
+
 - 💱 **Change Master Password**
+
   Update your master password:
+
   ```bash
   mango change
   ```
-  
+
 ## 📦 How to install?
 
 - 📥 Download the [`setup.sh`](https://github.com/lexionq/mango)
@@ -127,7 +141,7 @@ Star ⭐ the repo if you like it — it motivates the developer 😄
 
 [![Contributors](https://contrib.rocks/image?repo=lexionq/mango)](https://github.com/lexionq/mango/graphs/contributors)
 
-## 🧠 Future Plans
+## 🎯 Future Plans
 
 - [x] 🔐 AES Encryption
 - [x] 🧂 Salting
@@ -148,6 +162,3 @@ or
 ```bash
 bash setup.sh
 ```
-
-
-
