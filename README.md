@@ -8,7 +8,7 @@
   <br>
   <img alt="GitHub License" src="https://img.shields.io/github/license/lexionq/mango?style=for-the-badge&logoColor=blue&color=blue">
   <img src="https://img.shields.io/github/languages/top/lexionq/mango?style=for-the-badge&color=cyan">
-  <img src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple">  
+  <img alt="GitHub Release" src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple&cacheSeconds=2"> 
 </p>
 
 <p align="center">
