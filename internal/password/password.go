@@ -13,7 +13,7 @@ import (
 	"golang.org/x/term"
 )
 
-func CreatePasswordandHashPassword(path string){
+func CreatePasswordandHashPassword(path string) {
 	fmt.Print("Create password: ")
 	pass, err0 := term.ReadPassword(int(os.Stdin.Fd()))
 	if err0 != nil {
@@ -22,7 +22,7 @@ func CreatePasswordandHashPassword(path string){
 	fmt.Println(" ")
 
 	hash, err := bcrypt.GenerateFromPassword(pass, bcrypt.DefaultCost)
-	
+
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -34,7 +34,7 @@ func CreatePasswordandHashPassword(path string){
 	}
 
 	defer file.Close()
-	
+
 	_, err2 := file.Write(hash)
 
 	if err2 != nil {
@@ -43,7 +43,6 @@ func CreatePasswordandHashPassword(path string){
 
 	fmt.Println("[✔] Password created and saved successfully!")
 
-
 }
 
 func ChangePassword() {
@@ -51,11 +50,11 @@ func ChangePassword() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	mangoDir := filepath.Join(homeDir,".mango")
+	mangoDir := filepath.Join(homeDir, ".mango")
 	const mPassFile = "pass.hash"
 	const passesFile = "passes.mango"
-	mPassPath := filepath.Join(mangoDir,mPassFile)
-	passesPath := filepath.Join(mangoDir,passesFile)
+	mPassPath := filepath.Join(mangoDir, mPassFile)
+	passesPath := filepath.Join(mangoDir, passesFile)
 
 	fmt.Print("Enter password again: ")
 	pass, err0 := term.ReadPassword(int(os.Stdin.Fd()))
@@ -64,12 +63,12 @@ func ChangePassword() {
 	}
 	fmt.Println(" ")
 
-	hash,err := auth.GetPassHash(mPassPath)
+	hash, err := auth.GetPassHash(mPassPath)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	okay, err := auth.VerifyPassword(hash,pass)
+	okay, err := auth.VerifyPassword(hash, pass)
 	if okay {
 		fmt.Println("[✔] Password true.")
 	} else {
@@ -77,7 +76,7 @@ func ChangePassword() {
 		os.Exit(1)
 	}
 
-	if err != nil{
+	if err != nil {
 		fmt.Println("[!] Error: ", err)
 	}
 
@@ -89,7 +88,7 @@ func ChangePassword() {
 	fmt.Println(" ")
 
 	newPassHash, err := bcrypt.GenerateFromPassword(newPass, bcrypt.DefaultCost)
-	
+
 	if err != nil {
 		panic(err)
 	}
@@ -101,7 +100,7 @@ func ChangePassword() {
 	}
 
 	defer file.Close()
-	
+
 	_, err2 := file.Write(newPassHash)
 
 	if err2 != nil {
@@ -117,7 +116,7 @@ func ChangePassword() {
 	}
 	fmt.Println(" ")
 
-	okay, err = auth.VerifyPassword(newPassHash,passs)
+	okay, err = auth.VerifyPassword(newPassHash, passs)
 	if okay {
 		fmt.Println("[✔] Password true.")
 	} else {
@@ -125,17 +124,17 @@ func ChangePassword() {
 		os.Exit(1)
 	}
 	if err != nil {
-		fmt.Println("[!] Error: ",err)
+		fmt.Println("[!] Error: ", err)
 	}
 
-	ciphertext,err := os.ReadFile(passesPath)
-	if err != nil  {
-		fmt.Println("[!] Error: ",err)
+	ciphertext, err := os.ReadFile(passesPath)
+	if err != nil {
+		fmt.Println("[!] Error: ", err)
 	}
 
-	plaintext := crypt.Decrypt(ciphertext,pass)
+	plaintext := crypt.Decrypt(ciphertext, pass)
 
-	newCiphertext := crypt.Encrypt(plaintext,passs)
+	newCiphertext := crypt.Encrypt(plaintext, passs)
 
 	f, err := os.OpenFile(passesPath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
@@ -147,11 +146,10 @@ func ChangePassword() {
 	_, err = f.Write(newCiphertext)
 
 	if err != nil {
-		fmt.Println("Error: ",err)
+		fmt.Println("Error: ", err)
 	}
 
 	fmt.Println("[✔] Your password updated successfully!")
-	
 
 }
 
@@ -171,7 +169,7 @@ func GeneratePassword(length int) {
 		num, err := rand.Int(rand.Reader, big.NewInt(int64(len(charset))))
 		if err != nil {
 			fmt.Println("[!] Error during generate password: ", err)
-			return 
+			return
 		}
 		password[i] = charset[num.Int64()]
 	}

@@ -47,7 +47,7 @@ func main() {
 		return
 	}
 
-	if action == "--help" || action == "-h" {
+	if action == "--help" || action == "-h" || action == "help" {
 		utils.DisplayHelpMessage()
 		os.Exit(0)
 	}
@@ -87,9 +87,9 @@ func main() {
 		password.ChangePassword()
 	case "generate":
 		arg2 := os.Args[2]
-		length,err := strconv.Atoi(arg2)
+		length, err := strconv.Atoi(arg2)
 		if err != nil {
-			fmt.Println("[!] Error: ",err)
+			fmt.Println("[!] Error: ", err)
 		}
 		password.GeneratePassword(length)
 	default:

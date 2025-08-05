@@ -5,8 +5,8 @@ import (
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
-	"io"
 	"github.com/lexionq/mango/internal/auth"
+	"io"
 )
 
 func Encrypt(data, key []byte) []byte {
@@ -20,8 +20,6 @@ func Encrypt(data, key []byte) []byte {
 	}
 
 	key = auth.DeriveKey(key, salt)
-	
-
 
 	block, err := aes.NewCipher(key)
 	if err != nil {

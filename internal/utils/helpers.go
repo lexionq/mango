@@ -20,13 +20,13 @@ func PathExists(path string) bool {
 	return !os.IsNotExist(err)
 }
 
-func PassesFileControl(path string){
-	if !PathExists(path){
+func PassesFileControl(path string) {
+	if !PathExists(path) {
 		os.Create(path)
 	}
 }
 
-func DisplayHelpMessage(){
+func DisplayHelpMessage() {
 	fmt.Println(mango)
 	fmt.Println(`Usage:
 		mango [command]

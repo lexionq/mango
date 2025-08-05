@@ -11,7 +11,6 @@ func Decrypt(data, key []byte) []byte {
 	salt := data[:16]
 	key = auth.DeriveKey(key, salt)
 
-
 	block, err := aes.NewCipher(key)
 	if err != nil {
 		fmt.Println("Decrypt error (NewCipher):", err)
@@ -25,12 +24,12 @@ func Decrypt(data, key []byte) []byte {
 	nonceSize := aesGCM.NonceSize()
 
 	if len(data) < 16+nonceSize {
-		if len(data) == 0{
+		if len(data) == 0 {
 			return nil
-		} else{
+		} else {
 			fmt.Println("Decrypt error: ciphertext(data) too short (len =", len(data), ", needed =", nonceSize, ")")
 			return nil
-		}		
+		}
 	}
 
 	nonce := data[16 : 16+nonceSize]

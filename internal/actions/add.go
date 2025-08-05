@@ -4,13 +4,13 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/lexionq/mango/internal/crypt"
+	"golang.org/x/term"
 	"os"
 	"strings"
 	"syscall"
-	"golang.org/x/term"
 )
 
-func AddRegister(path string, key []byte ){
+func AddRegister(path string, key []byte) {
 	var rgName, rgSite, rgUsername, rgNote string
 	var rgPass []byte
 
@@ -41,25 +41,25 @@ func AddRegister(path string, key []byte ){
 	input, _ = reader.ReadString('\n')
 	rgNote = strings.TrimSpace(input)
 
-	ciphertext,err := os.ReadFile(path)
+	ciphertext, err := os.ReadFile(path)
 	if err != nil {
-		fmt.Println("Error: ",err)
-	}	
+		fmt.Println("Error: ", err)
+	}
 
 	var plaintext []byte
 
 	if len(ciphertext) > 0 {
-		plaintext = crypt.Decrypt(ciphertext,key)
+		plaintext = crypt.Decrypt(ciphertext, key)
 	} else {
 		plaintext = []byte{}
 	}
 
-	metaStr := rgName + "," + rgSite + "," + rgUsername + "," 
+	metaStr := rgName + "," + rgSite + "," + rgUsername + ","
 	text := append(plaintext, []byte(metaStr)...)
 	text = append(text, rgPass...)
 	text = append(text, []byte(","+rgNote+"\n")...)
 
-	text_to_be_written := crypt.Encrypt(text,key)
+	text_to_be_written := crypt.Encrypt(text, key)
 
 	f, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
@@ -71,11 +71,9 @@ func AddRegister(path string, key []byte ){
 	_, err = f.Write(text_to_be_written)
 
 	if err != nil {
-		fmt.Println("Error: ",err)
+		fmt.Println("Error: ", err)
 	}
 
 	fmt.Println("[✔] Register added successfully!")
 
-	
 }
-
