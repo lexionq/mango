@@ -8,7 +8,7 @@
   <br>
   <img alt="GitHub License" src="https://img.shields.io/github/license/lexionq/mango?style=for-the-badge&logoColor=blue&color=blue">
   <img src="https://img.shields.io/github/languages/top/lexionq/mango?style=for-the-badge&color=cyan">
-  <img alt="GitHub Release" src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple&cacheSeconds=2"> 
+ <img alt="GitHub Release" src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple"> 
 </p>
 
 <p align="center">
@@ -140,7 +140,7 @@ go run main.go
 PRs, issues, and suggestions are welcome!
 Star ⭐ the repo if you like it — it motivates the developer 😄
 
-[![Contributors](https://contrib.rocks/image?repo=lexionq/mango)](https://github.com/lexionq/mango/graphs/contributors)
+
 
 ## 🎯 Future Plans
 
