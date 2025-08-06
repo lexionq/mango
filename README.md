@@ -8,13 +8,14 @@
   <br>
   <img alt="GitHub License" src="https://img.shields.io/github/license/lexionq/mango?style=for-the-badge&logoColor=blue&color=blue">
   <img src="https://img.shields.io/github/languages/top/lexionq/mango?style=for-the-badge&color=cyan">
- <img alt="GitHub Release" src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple"> 
+  <img alt="GitHub Release" src="https://img.shields.io/github/v/release/lexionq/mango?style=for-the-badge&color=purple"> 
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/github/go-mod/go-version/lexionq/mango?style=for-the-badge&color=darkblue">
   <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/lexionq/mango/go.yml?style=for-the-badge&color=darkgreen">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lexionq/mango?style=for-the-badge">
+  <img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/lexionq/mango?style=for-the-badge">
 </p>
 <div align="center"
 
