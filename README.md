@@ -141,7 +141,9 @@ go run main.go
 PRs, issues, and suggestions are welcome!
 Star ⭐ the repo if you like it — it motivates the developer 😄
 
-
+<a href="https://github.com/lexionq/mango/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=lexionq/mango" />
+</a>
 
 ## 🎯 Future Plans
 
