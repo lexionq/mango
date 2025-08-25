@@ -31,15 +31,38 @@ func Edit(path string, key []byte) error {
 	}
 	tmpFile.Close()
 
-	cmd := exec.Command("nano", tmpFile.Name())
+	// Cross-platform editor selection
+	var cmd *exec.Cmd
+	editor := os.Getenv("EDITOR")
+
+	if editor != "" {
+		cmd = exec.Command(editor, tmpFile.Name())
+	} else {
+		// Try different editors based on OS and availability
+		editors := []string{"nano", "vim", "vi", "notepad", "code", "gedit"}
+
+		for _, ed := range editors {
+			if _, err := exec.LookPath(ed); err == nil {
+				cmd = exec.Command(ed, tmpFile.Name())
+				break
+			}
+		}
+
+		if cmd == nil {
+			fmt.Println("[!] No suitable editor found. Please set EDITOR environment variable.")
+			fmt.Println("    Available editors: nano, vim, vi, notepad, code, gedit")
+			return fmt.Errorf("no editor available")
+		}
+	}
+
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
 	err = cmd.Run()
 	if err != nil {
-		fmt.Println("[!] If you are using Windows, Mac or you don't have `nano`, you can't use this feature!")
-		panic(err)
+		fmt.Printf("[!] Error running editor: %v\n", err)
+		return err
 	}
 
 	editedData, err := os.ReadFile(tmpFile.Name())

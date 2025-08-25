@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/lexionq/mango/internal/crypt"
+	"github.com/lexionq/mango/internal/password"
 	"golang.org/x/term"
 	"os"
 	"strings"
@@ -36,6 +37,10 @@ func AddRegister(path string, key []byte) {
 		fmt.Println("Error reading password:", err)
 		return
 	}
+
+	// Check password strength
+	fmt.Println("\n🔍 Checking password strength...")
+	password.DisplayPasswordStrength(string(rgPass))
 
 	fmt.Print("Notes (optional): ")
 	input, _ = reader.ReadString('\n')

@@ -77,21 +77,55 @@ func main() {
 	case "list":
 		fmt.Println("\n", actions.ListRegisters(passesPath, pass))
 	case "search":
+		if len(os.Args) < 3 {
+			fmt.Println("[!] Error: Please provide a search term")
+			return
+		}
 		word := os.Args[2]
 		fmt.Println(actions.Search(passesPath, word, pass))
 	case "edit":
 		actions.Edit(passesPath, pass)
 	case "export":
 		actions.Export(passesPath)
+	case "exportcsv":
+		actions.ExportCSV(passesPath, pass)
+	case "importcsv":
+		actions.ImportCSV(passesPath, pass)
+	case "import":
+		actions.Import(passesPath)
+	case "delete":
+		actions.Delete(passesPath, pass)
+	case "copy":
+		actions.Copy(passesPath, pass)
+	case "backup":
+		actions.Backup(passesPath)
+	case "restore":
+		actions.Restore(passesPath)
+	case "stats":
+		actions.Stats(passesPath, pass)
 	case "change":
 		password.ChangePassword()
 	case "generate":
+		if len(os.Args) < 3 {
+			fmt.Println("[!] Error: Please provide password length")
+			return
+		}
 		arg2 := os.Args[2]
 		length, err := strconv.Atoi(arg2)
 		if err != nil {
 			fmt.Println("[!] Error: ", err)
+			return
 		}
 		password.GeneratePassword(length)
+	case "strength":
+		if len(os.Args) < 3 {
+			fmt.Print("Enter password to check: ")
+			var testPass string
+			fmt.Scanln(&testPass)
+			password.DisplayPasswordStrength(testPass)
+		} else {
+			password.DisplayPasswordStrength(os.Args[2])
+		}
 	default:
 		fmt.Println("[!] Error Unknown parameter!")
 		utils.DisplayHelpMessage()

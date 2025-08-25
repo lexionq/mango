@@ -20,12 +20,20 @@ func Search(path, word string, key []byte) []string {
 	ciphertext, err := os.ReadFile(path)
 	if err != nil {
 		fmt.Println("[!] Error: ", err)
+		return nil
 	}
+
 	var result []string
 
+	// Check if file is empty
+	if len(ciphertext) == 0 {
+		fmt.Println("[!] No registers found to search.")
+		return nil
+	}
+
 	plaintext := crypt.Decrypt(ciphertext, key)
-	if plaintext == nil {
-		fmt.Println("[!] Error: Decryption failed or returned nil.")
+	if plaintext == nil || len(plaintext) == 0 {
+		fmt.Println("[!] No registers found to search.")
 		return nil
 	}
 

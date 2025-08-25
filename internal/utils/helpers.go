@@ -35,12 +35,34 @@ func DisplayHelpMessage() {
 		help        Show this help message
 		add         Add new register
 		list        List all of registers
-		search	    Searches for the specified word among the registers
-		edit        Edit registers(with nano)
-		change 	    Change your master password
-		generate    Password generator for you
+		search      Searches for the specified word among the registers
+		edit        Edit registers (cross-platform editor)
+		delete      Delete a register
+		copy        Copy password to clipboard
+		stats       Show password database statistics
+		
+	Password Management:
+		generate    Generate a secure password
+		strength    Check password strength
+		change      Change your master password
+		
+	Backup & Export:
+		backup      Create a backup of your database
+		restore     Restore from a backup
+		export      Export database (encrypted)
+		exportcsv   Export to CSV format (unencrypted)
+		import      Import database (encrypted)
+		importcsv   Import from CSV format
 
 	Flags:
 		-h, --help  help for mango
+		
+	Examples:
+		mango add                    # Add new password
+		mango search google          # Search for 'google'
+		mango generate 16            # Generate 16-char password
+		mango strength mypass123     # Check password strength
+		mango copy                   # Copy password to clipboard
+		mango backup                 # Create backup
 	`)
 }

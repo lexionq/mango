@@ -19,18 +19,47 @@
 </p>
 <div align="center"
 
-[🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install)
-
-• [🤝 Contributing](#-contributing-and-contributors) • [🎯 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
+[🥭 About](#-about-mango) • [✨ Features](#-key-features) • [📦 Install](#-installation) • [🔧 Commands](#-commands-reference) • [� UpdAates](#-updates--maintenance) • [🤝 Contributing](#-contributing-and-contributors)
 
 </div>
 
 ## 🥭 About Mango
 
-Mango is a a lightweight and local password manager for the terminal. All your credentials are encrypted and stored **locally,** accessible **only with your master password.** 🔐🔓
+Mango is a **lightweight, secure, and local** password manager for the terminal. All your credentials are encrypted and stored **locally** - no cloud, no servers, just you and your data. 🔐
 
-🐧 Currently supports only Linux systems(requires `nano`)
-🚀 Cross-platform support is coming soon! Stay tuned... 🥳
+### 🚀 Quick Start
+```bash
+# Install mango
+curl -sSL https://raw.githubusercontent.com/lexionq/mango/main/setup.sh | bash
+
+# First run - create your master password
+mango add
+
+# Add your first password
+# Name: Gmail
+# Website: gmail.com  
+# Username: mysupersecure@gmail.com
+# Password: [secure password]
+# Notes: Personal email
+
+# List all passwords
+mango list
+
+# Search for specific entries
+mango search gmail
+
+# Copy password to clipboard
+mango copy
+
+# Generate a strong password
+mango generate 16
+
+# Check password strength
+mango strength mypassword123
+
+# Create backup
+mango backup
+```
 
 ## ⚠️ Disclaimer
 
@@ -45,95 +74,113 @@ Mango is a a lightweight and local password manager for the terminal. All your c
 
 ## Platform 💻
 
-🟢 **Linux _only_** (for now)
+🟢 **Linux** ✅  
+🍏 **macOS** ✅  
+🪟 **Windows** ✅ (testing)
 
-📝 Requires `nano` for editing registers
+📝 Automatic editor detection (supports nano, vim, notepad, VS Code, and more)
 
-## Features 🌠
+## ✨ Key Features
 
-With Mango, you can securely manage your credentials in the format:
+### 🔒 Security First
+- **AES-256 Encryption** - Military-grade encryption for your passwords
+- **Salt & Hash** - Secure master password storage with bcrypt
+- **Local Storage** - No cloud, no servers, your data stays on your device
+- **Password Strength Analysis** - Real-time security assessment
 
-`[name, website, username, password, note]`
+### 🌍 Cross-Platform
+- **Windows, macOS, Linux** - Works everywhere
+- **Smart Editor Detection** - Automatically finds your preferred editor
+- **Clipboard Integration** - Secure copy with auto-clear (30s)
 
-🔐 All data is AES encrypted using your master password.
+### 📊 Data Management
+- **Multiple Export Formats** - Encrypted backup & CSV export
+- **Import/Export** - Easy migration between devices
+- **Database Statistics** - Track your password health
+- **Automatic Backups** - Never lose your data
 
-## 🔧 Available Commands
+### 💡 User Experience
+- **Interactive CLI** - Clean, intuitive interface
+- **Search & Filter** - Quickly find what you need
+- **Batch Operations** - Manage multiple entries efficiently
+- **Zero Dependencies** - Single binary, no installation hassles
 
-- ➕ **Add a Register**  
-  Use the command below to add a new register:
-  ```bash
-  mango add
-  ```
-- 📎 **List All Registers**  
-  Display all saved registers:
+**Data Format:** `[name, website, username, password, notes]`
 
-  ```bash
-  mango list
-  ```
+## 🔧 Commands Reference
 
-- 📝 **Edit a Register**  
-  Modify an existing register:
+### 🔐 Basic Operations
+| Command | Description | Example |
+|---------|-------------|---------|
+| `add` | Add new password entry | `mango add` |
+| `list` | Show all saved passwords | `mango list` |
+| `edit` | Edit existing entries | `mango edit` |
+| `delete` | Remove a password entry | `mango delete` |
+| `search` | Find entries by keyword | `mango search google` |
 
-  ```bash
-  mango edit
-  ```
+### �️ dPassword Tools
+| Command | Description | Example |
+|---------|-------------|---------|
+| `generate` | Create secure password | `mango generate 16` |
+| `strength` | Analyze password security | `mango strength mypass123` |
+| `copy` | Copy password to clipboard | `mango copy` |
+| `change` | Update master password | `mango change` |
 
-- 🔍 **Search Registers**  
-  Search for specific registers using a keyword:
+### � Bacrkup & Data Management
+| Command | Description | Example |
+|---------|-------------|---------|
+| `backup` | Create encrypted backup | `mango backup` |
+| `restore` | Restore from backup | `mango restore` |
+| `export` | Export encrypted database | `mango export` |
+| `import` | Import encrypted database | `mango import` |
+| `exportcsv` | Export to CSV format | `mango exportcsv` |
+| `importcsv` | Import from CSV file | `mango importcsv` |
 
-  ```bash
-  mango search <keyword>
-  ```
+### 📊 Analytics
+| Command | Description | Example |
+|---------|-------------|---------|
+| `stats` | View database statistics | `mango stats` |
 
-- 📤 **Export Registers**  
-  Export all saved registers to a file:
-
-  ```bash
-  mango export
-  ```
-
-- 📥 **Import Registers**  
-  Import registers from a previously exported file:
-
-  ```bash
-  mango import
-  ```
-
-- 🪄 **Generate Password**
-
-  Generate a password of the desired length (minimum 6 characters):
-
-  ```bash
-  mango generate <password_length>
-  ```
-
-- 💱 **Change Master Password**
-
-  Update your master password:
-
-  ```bash
-  mango change
-  ```
-
-## 📦 How to install?
-
-- 📥 Download the [`setup.sh`](https://github.com/lexionq/mango)
-- 🛡️ Make it executable:
-- ```bash
-  chmod +x setup.sh
-  ```
-- ▶️ Run the script:
-- ```bash
-  ./setup.sh
-  ```
-- ✅ Mango is now installed and ready to use!
-
-## 🔽 Or use source code
-
+### 🆘 Help
 ```bash
-git clone https://github.com/lexionq/mango mango
+mango --help    # Show all commands
+mango -h        # Short help
+```
+
+## 📦 Installation
+
+### Method 1: Pre-built Binary (Recommended)
+```bash
+# Download and run the setup script
+curl -sSL https://raw.githubusercontent.com/lexionq/mango/main/setup.sh | bash
+```
+
+### Method 2: Build from Source
+```bash
+# Clone the repository
+git clone https://github.com/lexionq/mango.git
 cd mango
-go run main.go
+
+# Using Makefile (recommended)
+make build              # Standard build
+make build-optimized    # Smaller binary
+make install            # Build and install to PATH
+
+# Or manual build
+go build -o mango main.go
+./mango --help
+```
+
+### Method 3: Go Install
+```bash
+go install github.com/lexionq/mango@latest
+```
+
+### Method 4: Development Mode
+```bash
+git clone https://github.com/lexionq/mango.git
+cd mango
+go run main.go --help
 ```
 
 ## 🤝 Contributing and Contributors
@@ -145,24 +192,52 @@ Star ⭐ the repo if you like it — it motivates the developer 😄
   <img src="https://contrib.rocks/image?repo=lexionq/mango" />
 </a>
 
-## 🎯 Future Plans
+## 🎯 Features
 
 - [x] 🔐 AES Encryption
 - [x] 🧂 Salting
-- [ ] 🪟 Windows & 🍏 macOS sypport
+- [x] 🪟 Windows & 🍏 macOS support
+- [x] 🔁 Import/Export options (encrypted & CSV)
+- [x] 📋 Clipboard integration with auto-clear
+- [x] 🔒 Password strength analysis
+- [x] 💾 Automatic backup system
+- [x] 📊 Database statistics
+- [x] 🗑️ Secure password deletion
+- [x] 🎯 Cross-platform editor support
+- [ ] 🔐 Two-Factor Authentication (2FA)
+- [ ] 📱 Password expiry notifications
 - [ ] 🌐 GUI version (maybe?)
-- [x] 🔁 Import/Export options
+- [ ] 🏷️ Categories and tags system
 
-## ♻️ Update mango
+## 🔄 Updates & Maintenance
 
-To update mango, all you need to do is run following command again each time a new update is released:
-
+### Update Mango
 ```bash
-./setup.sh
+# If installed via setup script
+curl -sSL https://raw.githubusercontent.com/lexionq/mango/main/setup.sh | bash
+
+# If installed via go install
+go install github.com/lexionq/mango@latest
+
+# If built from source
+git pull origin main && go build -o mango . 
 ```
 
-or
-
+### Build Options
 ```bash
-bash setup.sh
+# Standard build
+go build -o mango .
+
+# Optimized build (smaller binary)
+go build -ldflags="-s -w" -o mango main.go
+
+# Cross-compile for different platforms
+GOOS=windows GOARCH=amd64 go build -o mango.exe main.go  # Windows
+GOOS=darwin GOARCH=amd64 go build -o mango-mac main.go   # macOS
+GOOS=linux GOARCH=amd64 go build -o mango-linux main.go  # Linux
 ```
+
+### Performance Tips
+- Use `mango backup` regularly to protect your data
+- Check `mango stats` to monitor password health
+- Run `mango strength` on important passwords periodically
