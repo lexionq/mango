@@ -19,7 +19,7 @@
 </p>
 <div align="center"
 
-[🥭 About](#-about-mango) • [✨ Features](#-key-features) • [📦 Install](#-installation) • [🔧 Commands](#-commands-reference) • [� UpdAates](#-updates--maintenance) • [🤝 Contributing](#-contributing-and-contributors)
+[🥭 About](#-about-mango) • [✨ Features](#-key-features) • [📦 Install](#-installation) • [🔧 Commands](#-commands-reference) • [🆕 Updates](#-updates--maintenance) • [🤝 Contributing](#-contributing-and-contributors)
 
 </div>
 
