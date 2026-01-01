@@ -21,7 +21,7 @@
 
 [🥭 About Mango](#-about-mango) • [⚠️ Disclaimer](#%EF%B8%8F-disclaimer) • [Platform 💻](#platform-) • [Features 🌠](#features-) • [🔧 Available Commands](#-available-commands) • [📦 How to install?](#-how-to-install)
 
-• [🤝 Contributing](#-contributing-and-contributors) • [🎯 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango)
+• [🤝 Contributing](#-contributing-and-contributors) • [🎯 Future Plans](#-future-plans) • [♻️ Update mango](#️-update-mango) 
 
 </div>
 
@@ -115,6 +115,14 @@ With Mango, you can securely manage your credentials in the format:
   mango change
   ```
 
+- 📋 **Copy Your Password to Clipboard**
+
+  For copy pass to clipboard:
+
+  ```bash
+  mango copy
+  ```
+
 ## 📦 How to install?
 
 - 📥 Download the [`setup.sh`](https://github.com/lexionq/mango)
@@ -149,7 +157,8 @@ Star ⭐ the repo if you like it — it motivates the developer 😄
 
 - [x] 🔐 AES Encryption
 - [x] 🧂 Salting
-- [ ] 🪟 Windows & 🍏 macOS sypport
+- [x] 🐳 Docker support
+- [ ] 🪟 Windows & 🍏 macOS support
 - [ ] 🌐 GUI version (maybe?)
 - [x] 🔁 Import/Export options
 

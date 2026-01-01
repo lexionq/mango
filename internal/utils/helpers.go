@@ -37,6 +37,7 @@ func DisplayHelpMessage() {
 		list        List all of registers
 		search	    Searches for the specified word among the registers
 		edit        Edit registers(with nano)
+		copy        Copy password to clipboard
 		change 	    Change your master password
 		generate    Password generator for you
 
