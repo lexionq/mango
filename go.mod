@@ -8,6 +8,7 @@ require (
 )
 
 require (
+	github.com/atotto/clipboard v0.1.4 // indirect
 	github.com/otiai10/mint v1.6.3 // indirect
 	golang.org/x/sync v0.8.0 // indirect
 )
