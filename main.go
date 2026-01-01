@@ -83,6 +83,12 @@ func main() {
 		actions.Edit(passesPath, pass)
 	case "export":
 		actions.Export(passesPath)
+	case "copy":
+		err := actions.CopyToClipboard(passesPath, pass)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
 	case "change":
 		password.ChangePassword()
 	case "generate":
