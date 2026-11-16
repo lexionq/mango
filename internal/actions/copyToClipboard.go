@@ -63,15 +63,17 @@ func CopyToClipboard(path string, key []byte) error {
 	}
 
 	password := Clean(fields[3])
-	clipboard.WriteAll(password)
+	if err := clipboard.WriteAll(password); err != nil {
+		return fmt.Errorf("[!] Error: failed to copy password: %w", err)
+	}
 	fmt.Println("[✔] Password copied succesfully!")
-	fmt.Println("[*] Clipboard will be cleared after 10 seconds...")
-	
-	go func() {
-		time.Sleep(10 * time.Second)
-		clipboard.WriteAll("")
-		fmt.Println("[✔] Clipboard cleared!")
-	}()
-	
+	fmt.Println("[*] Clipboard will be cleared after 5 seconds...")
+
+	time.Sleep(5 * time.Second)
+	if err := ClearPasteboard(); err != nil {
+		return fmt.Errorf("[!] Error: failed to clear clipboard: %w", err)
+	}
+	fmt.Println("[✔] Clipboard cleared!")
+
 	return nil
 }
