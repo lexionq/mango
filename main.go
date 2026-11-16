@@ -52,6 +52,25 @@ func main() {
 		os.Exit(0)
 	}
 
+	if action == "cls" {
+		actions.ClearScreen()
+		os.Exit(0)
+	}
+
+	if action == "clp" {
+		if err := actions.ClearPasteboard(); err != nil {
+			fmt.Println("[!] Error: ", err)
+			os.Exit(1)
+		}
+		fmt.Println("[✔] Clipboard cleared!")
+		os.Exit(0)
+	}
+
+	
+
+	// on this code, program asks u pass. for help, cls and clp actions, its not required. so these actions written before this code. 
+	// so, dont change or do better this when u contributing
+
 	pass, err := auth.PromptPassword()
 
 	if err != nil {
@@ -74,16 +93,18 @@ func main() {
 	switch action {
 	case "add":
 		actions.AddRegister(passesPath, pass)
-	case "list":
+	case "ls", "list":
 		fmt.Println("\n", actions.ListRegisters(passesPath, pass))
 	case "search":
 		word := os.Args[2]
 		fmt.Println(actions.Search(passesPath, word, pass))
 	case "edit":
 		actions.Edit(passesPath, pass)
-	case "export":
+	case "import", "imp":
+		actions.Import(passesPath)
+	case "export", "exp":
 		actions.Export(passesPath)
-	case "copy":
+	case "cp", "copy":
 		err := actions.CopyToClipboard(passesPath, pass)
 		if err != nil {
 			fmt.Println(err)
@@ -91,13 +112,14 @@ func main() {
 		}
 	case "change":
 		password.ChangePassword()
-	case "generate":
+	case "gen", "generate":
 		arg2 := os.Args[2]
 		length, err := strconv.Atoi(arg2)
 		if err != nil {
 			fmt.Println("[!] Error: ", err)
 		}
-		password.GeneratePassword(length)
+		password.GeneratePassword(length)	
+		
 	default:
 		fmt.Println("[!] Error Unknown parameter!")
 		utils.DisplayHelpMessage()
