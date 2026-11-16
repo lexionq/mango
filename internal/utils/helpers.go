@@ -28,20 +28,30 @@ func PassesFileControl(path string) {
 
 func DisplayHelpMessage() {
 	fmt.Println(mango)
-	fmt.Println(`Usage:
-		mango [command]
+	fmt.Print(`Usage:
+  mango <command> [arguments]
 
-	Available Commands:
-		help        Show this help message
-		add         Add new register
-		list        List all of registers
-		search	    Searches for the specified word among the registers
-		edit        Edit registers(with nano)
-		copy        Copy password to clipboard
-		change 	    Change your master password
-		generate    Password generator for you
+Commands:
+  help               Show help message
+  add                Add a new register
+  ls                 List all registers
+  search <keyword>   Search registers by keyword
+  edit               Edit registers with nano
+  cp                 Copy password to clipboard
+  clp                Clear clipboard
+  cls                Clear terminal screen
+  import             Import registers from any source
+  export             Export all registers
+  change             Change master password
+  gen      <length>  Generate a password with length
 
-	Flags:
-		-h, --help  help for mango
-	`)
+Flags:
+  -h, --help         Show help message
+
+Examples:
+  mango add
+  mango ls
+  mango search github
+  mango gen 16
+`)
 }
