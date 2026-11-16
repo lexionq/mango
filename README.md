@@ -39,6 +39,10 @@ Mango is a a lightweight and local password manager for the terminal. All your c
 >
 > **_The program owner, lexionq, says they're not responsible if you lose or leak any passwords you've saved using the mango password manager._**
 >
+>
+> **💻 This program is developing now.**
+> **_Mango is basic password manager. And it may contain many security issues. If you have saved your passwords using Mango, you accept the risk that your passwords could be leaked._**
+>
 > **🧠 Don't Forget your Master Password**
 >
 > **_When you use Mango, it will ask you for a master password. Save this password and don't forget it! Otherwise, all your passwords will be irretrievable!_**
@@ -68,7 +72,7 @@ With Mango, you can securely manage your credentials in the format:
   Display all saved registers:
 
   ```bash
-  mango list
+  mango ls
   ```
 
 - 📝 **Edit a Register**  
@@ -104,7 +108,7 @@ With Mango, you can securely manage your credentials in the format:
   Generate a password of the desired length (minimum 6 characters):
 
   ```bash
-  mango generate <password_length>
+  mango gen <password_length>
   ```
 
 - 💱 **Change Master Password**
@@ -120,7 +124,7 @@ With Mango, you can securely manage your credentials in the format:
   For copy pass to clipboard:
 
   ```bash
-  mango copy
+  mango cp
   ```
 
 ## 📦 How to install?
